@@ -12,6 +12,7 @@
 # Development #
 ###############
 *.note
+Session.vim
 
 # Packages #
 ############
