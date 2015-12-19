@@ -123,7 +123,11 @@ def translate_word(dictionary, word):
     logging.info('Attempting to parse the html and extract the translations')
     soup = BeautifulSoup(r.content, 'html.parser')
     table_single_form = soup.find_all('table', {'class': 'WRD'})[0]
-    data_single_form = parse_translation_table(table_single_form)
+    try:
+        data_single_form = parse_translation_table(table_single_form)
+    except IndexError:
+        logging.warning('The word passed doesn\'t have any translation')
+        return -1
 
     logging.info('Translations extracted')
     # print the results in a pretty way
