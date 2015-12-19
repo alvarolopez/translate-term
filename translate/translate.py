@@ -44,7 +44,7 @@ def main():
 
     dictionaries = get_dictionaries()
     if args.list:
-        logging('Attempting to print the list of available dictionaries')
+        logging.info('Attempting to print the list of available dictionaries')
         print('')
         print('**** Available dictionaries:')
         print(dictionaries.table)
