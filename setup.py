@@ -24,7 +24,7 @@ setup(
         'requests>=2.8.1', 
         'beautifulsoup4>=4.4.1', 
         'terminaltables>=2.1.0' 
-        ]
+        ],
     entry_points = {
         'console_scripts': ['translate = translate.translate:main']
         },
