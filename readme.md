@@ -1,4 +1,4 @@
-Translate-term
+ranslate-term
 ======
 
 Command-line translator relying on [WordReference](http://wordreference.com)
@@ -17,9 +17,9 @@ Install
 ------
 
 You can install directly this package with pip:
-'''
+```
 pip install translate-term
-'''
+```
 
 Usage
 ------
@@ -35,27 +35,27 @@ language to translate to
 
 For example, if you want to translate 'speak' from English to French, you need
 to type:
-'''
+```
 translate enfr speak
-'''
+```
 
 And if you want to translate an expression:
-'''
+```
 translate enfr "speak out"
-'''
+```
 
 If you want the list of available dictionaries, just pass the `-l` or `--list`
 argument:
-'''
+```
 translate -l
 translate --list
-'''
+```
 
 Any doute, just call for `--help`!:
-'''
+```
 translate -h
 translate --help
-'''
+```
 
 Note
 ------
