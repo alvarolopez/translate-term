@@ -1,4 +1,4 @@
-ranslate-term
+Translate-term
 ======
 
 Command-line translator relying on [WordReference](http://wordreference.com)
