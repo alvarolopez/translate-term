@@ -45,7 +45,7 @@ def main():
     dictionaries = get_dictionaries()
     if args.list:
         logging('Attempting to print the list of available dictionaries')
-        print()
+        print('')
         print('**** Available dictionaries:')
         print(dictionaries.table)
         logging.info('Printed the list of available dictionaries')
@@ -160,8 +160,8 @@ def parse_translation_table(table):
 def print_results(word, data_single_form):
     ''' Pretty print of the translation results '''
 
-    print()
+    print('')
     print('**** Translations for {}:'.format(word))
     print(AsciiTable(data_single_form).table)
-    print()
+    print('')
 
