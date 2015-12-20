@@ -4,7 +4,7 @@
 
 '''translate.translate: provides main() entry point.'''
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 
 
 import logging

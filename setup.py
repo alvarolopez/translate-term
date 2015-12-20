@@ -35,6 +35,6 @@ setup(
     license='MIT',
     author = 'Kevin Olivier',
     author_email = 'kevin.olivier@outlook.com',
-    url = "http://gehrcke.de/2014/02/distributing-a-python-command-line-application",
+    url = 'https://github.com/kevinolivier/translate-term'
     )
 
