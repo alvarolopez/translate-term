@@ -61,9 +61,9 @@ def main():
 
 
 def get_dictionaries():
-    ''' 
+    '''
     Requests wordreference.com homepage and parse the list of availables
-    dictionaries 
+    dictionaries
     '''
 
     url = 'http://www.wordreference.com'
@@ -73,28 +73,28 @@ def get_dictionaries():
         logging.info('Request failed with status {}'.format(r.status_code))
         return -1
     logging.info('Request for {} successful'.format(url))
-    
+
     logging.info('Attempting to parse the html and extract the list of dictionaries')
     soup = BeautifulSoup(r.content, 'html.parser')
     options = soup.find_all('option')
     dictionaries = [ ['Key', 'Dictionary'] ]
-    dictionaries += [ [option['id'], option.get_text()] for option in options 
+    dictionaries += [ [option['id'], option.get_text()] for option in options
             if option['id'][:2] != option['id'][2:4]      # No definition option
             and len(option['id']) == 4                 # No synonyms or conjugation option
             ]
-    
+
     logging.info('List of dictionaries extracted')
     table = AsciiTable(dictionaries)
     return table
 
 
 def translate_word(dictionary, word):
-    ''' 
+    '''
     Requests the page for the translation of "word" using the dictionary
     "dictionary".
     Print a formatted version of the response
     '''
-    
+
     # Iniital checks
     if not isinstance(dictionary, str) or len(dictionary) != 4:
         raise TypeError('''The "dictionary" argument must be a string of length 4,
@@ -103,7 +103,7 @@ def translate_word(dictionary, word):
                 you would like to translate to.''')
     if not isinstance(word, str):
         raise TypeError('The "word" argument must be a string (type {} passed)'.format(type(word)))
-    
+
     # Building the url (and formatting it) and get the html from GET
     base_url = 'http://www.wordreference.com/'
     url = base_url + dictionary + '/' + word.replace(' ', '%20')
