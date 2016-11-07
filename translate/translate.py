@@ -150,7 +150,7 @@ def parse_translation_table(table):
                 continue
             cells[2].em.decompose()
             if cells[0].get_text(strip=True) == '':
-                data[-1][1] += '\n{}'.format(cells[2].get_text())
+                data[-1][1] += u'\n{}'.format(cells[2].get_text())
             else:
                 data += [[
                     cells[0].find('strong').get_text(),
