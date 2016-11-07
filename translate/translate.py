@@ -146,6 +146,8 @@ def parse_translation_table(table):
     for row in rows:
         cells = row.find_all('td')
         if len(cells) == 3:
+            if cells[2].em is None:
+                continue
             cells[2].em.decompose()
             if cells[0].get_text(strip=True) == '':
                 data[-1][1] += '\n{}'.format(cells[2].get_text())
